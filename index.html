@@ -6,46 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Shortener</title>
     <link rel="icon" href="https://cdn.pixabay.com/photo/2022/01/17/22/20/subtract-6945896_960_720.png">
-    <style>
-
-    body {
-        padding: 2em;
-        background-color: black;
-        color: white;
-        text-align: center;
-        justify-content: center;
-        margin-top: 7%;
-    }
-
-    button {
-        background-color: greenyellow;
-        border: 1px solid red;
-        
-    }
-
-    button:hover {
-        color: red;
-        cursor: pointer;
-    }
-
-    #source {
-        width: 50%;
-    }
-
-    .link {
-        margin-top: 0.4em;
-    }
-
-    a {
-        color: greenyellow;
-    }
-    
-    a:hover {
-        color: red;
-        font-size: 1.1rem;
-    }
-
-    </style>
+    <link rel="stylesheet" href="/04_short_url/url.css">
 </head>
 <body>
     
@@ -56,35 +17,7 @@
     <div class="link"> Full short link 2: <span id="short-link2"></span></div>
     <div class="link"> Full short link 3: <span id="short-link3"></span></div>
 
-
-<script>
-    window.onload = function() {
-        document.getElementById("send-button").addEventListener("click", generateLink);
-    };
-
-    function generateLink() {
-        let url = document.getElementById("source").value;
-        fetch("https://api.shrtco.de/v2/shorten?url="+url)
-        .then( response => response.json())
-        .then(data => linksReady(data));
-    };
-
-    function linksReady(data) {
-        console.log(data);
-        let result = data.result;
-        setLink("code", result.code);
-        setLink("short-link", result.full_short_link);
-        setLink("short-link2", result.full_short_link2);
-        setLink("short-link3", result.full_short_link3);
-    }
-
-    function setLink(id, shortUrl) {
-        document.getElementById(id).innerHTML
-            = "<a href='"+shortUrl+"'>"+shortUrl+"</a>";
-    }
-
-
-</script>
+<script src="/04_short_url/url.js"></script>
 
 </body>
 </html>

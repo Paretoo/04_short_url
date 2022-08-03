@@ -1,0 +1,37 @@
+
+    body {
+        padding: 2em;
+        background-color: black;
+        color: white;
+        text-align: center;
+        justify-content: center;
+        margin-top: 7%;
+    }
+
+    button {
+        background-color: greenyellow;
+        border: 1px solid red;
+        
+    }
+
+    button:hover {
+        color: red;
+        cursor: pointer;
+    }
+
+    #source {
+        width: 50%;
+    }
+
+    .link {
+        margin-top: 0.4em;
+    }
+
+    a {
+        color: greenyellow;
+    }
+    
+    a:hover {
+        color: red;
+        font-size: 1.1rem;
+    }
